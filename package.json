@@ -1,0 +1,19 @@
+{
+  "name": "bar-fight-game",
+  "version": "1.0.0",
+  "description": "A bar fight game built with Phaser and TypeScript",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "phaser": "^3.55.2"
+  },
+  "devDependencies": {
+    "@types/node": "^20.10.0",
+    "typescript": "^5.3.3",
+    "vite": "^5.0.0"
+  }
+}
