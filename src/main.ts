@@ -111,7 +111,9 @@ try {
   window.addEventListener("keydown", (event) => {
     if (event.code === "Escape" && !event.repeat && lastState?.running && !lastState.gameOver) game.togglePause();
   });
-  window.addEventListener("pagehide", () => game.dispose(), { once: true });
+  window.addEventListener("pagehide", (event) => {
+    if (!event.persisted) game.dispose();
+  });
 } catch (error) {
   el("error").hidden = false;
   el("error").textContent = "Não foi possível iniciar o 3D. Ative a aceleração gráfica e recarregue em um navegador desktop atualizado.";
