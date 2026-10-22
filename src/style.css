@@ -1,0 +1,81 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800;900&family=Barlow:wght@400;500;600;700&display=swap');
+
+:root { font-family: "Barlow", Arial, sans-serif; color: #e4e0d4; background: #141411; font-synthesis: none; }
+* { box-sizing: border-box; }
+body { margin: 0; }
+button, a { -webkit-tap-highlight-color: transparent; }
+button { font: inherit; cursor: pointer; }
+button:disabled { opacity: .4; cursor: default; }
+button:focus-visible, a:focus-visible { outline: 2px solid #ffc64b; outline-offset: 5px; }
+[hidden] { display: none !important; }
+.masthead { height: 83px; max-width: 1600px; padding: 0 4%; margin: auto; display: flex; align-items: center; gap: 26px; }
+.wordmark { font-family: "Barlow Condensed", Impact, sans-serif; font-style: italic; font-weight: 900; font-size: 34px; letter-spacing: -2px; text-decoration: none; color: #eee7d7; }
+.wordmark span { color: #dba946; font-size: 18px; padding-left: 5px; }
+.edition { font-size: 10px; letter-spacing: 2px; color: #88877b; font-weight: 600; }
+i { font-style: normal; color: #d8a841; margin: 0 12px; }
+.quiet { margin-left: auto; background: none; border: 0; color: #bab7aa; font-size: 10px; letter-spacing: 1.5px; display: flex; align-items: center; gap: 15px; }
+main { max-width: 1600px; margin: 0 auto; padding: 0 4%; }
+.game-shell { position: relative; overflow: hidden; width: 100%; height: min(70vw, 690px); min-height: 460px; border: 1px solid #3c392d; background: #201c18; }
+#arena, #arena canvas, .vignette { position: absolute; inset: 0; width: 100%; height: 100%; display: block; }
+.vignette { pointer-events: none; background: linear-gradient(180deg, #080a0a55, transparent 25%, transparent 65%, #080a0a88); box-shadow: inset 0 0 100px #0006; }
+.overlay { position: absolute; inset: 0; background: linear-gradient(90deg, #10110fee, #10110fd0 35%, #10110f20 80%); display: flex; align-items: center; justify-content: space-between; padding: 5% 6%; }
+.menu { max-width: 530px; }
+.eyebrow { color: #d1aa58; font-size: 11px; letter-spacing: 3px; font-weight: 700; display: flex; align-items: center; gap: 12px; }
+.eyebrow span { width: 26px; height: 2px; background: #d1aa58; }
+h1 { font-family: "Barlow Condensed", Impact, sans-serif; font-size: clamp(80px, 10vw, 151px); line-height: .79; letter-spacing: -3px; font-weight: 900; margin: 30px 0 24px; transform: skew(-5deg); position: relative; }
+h1 > span { color: #e6b34f; }
+h1 sup { position: absolute; font-size: 25px; top: 5px; margin-left: 15px; color: #e6b34f; }
+.tagline { font-size: 15px; color: #a9a89b; line-height: 1.8; margin-bottom: 25px; }
+.primary { background: #e9b84f; border: 1px solid #f1c973; padding: 18px 22px; min-width: 265px; color: #191a14; font-family: "Barlow Condensed", Impact, sans-serif; letter-spacing: 1.7px; font-size: 18px; font-weight: 800; display: flex; gap: 35px; align-items: center; justify-content: space-between; transition: background .15s, transform .15s; }
+.primary:hover { background: #ffcf6b; transform: translateY(-2px); }
+.primary > span { font-size: 22px; }
+.menu-note { color: #77786b; font-size: 8px; letter-spacing: 1.7px; margin-top: 15px; }
+.menu-side { align-self: flex-end; padding-bottom: 45px; text-align: right; }
+.menu-side > span { color: #dcad54; font-size: 9px; letter-spacing: 2px; }
+.menu-side p { font: 600 25px/1.25 "Barlow Condensed", Impact, sans-serif; color: #e3decb; letter-spacing: .5px; }
+.menu-side b { color: #dcb156; }
+.location { position: absolute; bottom: 22px; left: 28px; right: 28px; font-size: 9px; letter-spacing: 2px; color: #b3b09c; display: flex; align-items: center; gap: 8px; pointer-events: none; z-index: 2; }
+.location > span:last-child { margin-left: auto; color: #817e6e; }
+.live-dot { width: 5px; height: 5px; border-radius: 50%; background: #dbac4c; box-shadow: 0 0 8px #dbac4c88; }
+.hud { position: absolute; top: 25px; left: 28px; right: 28px; display: flex; justify-content: space-between; pointer-events: none; }
+.vitals { width: 205px; padding: 14px; background: #10110fe6; border: 1px solid #60523877; }
+.identity { display: flex; align-items: center; gap: 10px; margin-bottom: 15px; }
+.avatar { font: italic 800 25px "Barlow Condensed", Impact, sans-serif; background: #c1a16a; color: #1b1b16; padding: 3px 12px; }
+.identity strong { font: 800 23px "Barlow Condensed", Impact, sans-serif; letter-spacing: 2px; display: block; }
+.identity small { font-size: 7px; letter-spacing: 1.4px; color: #aaa693; }
+.meter-label { font-size: 8px; letter-spacing: 1.4px; display: flex; justify-content: space-between; margin: 9px 0 5px; color: #b0aa98; }
+.meter { background: #343329; height: 6px; }
+.meter > div { height: 100%; width: 100%; transition: width .1s; }
+.health > div { background: #cf5e49; }
+.stamina > div { background: #e0b453; }
+.exhausted { display: block; margin-top: 10px; font-size: 7px; color: #ed7c62; }
+.scoreboard { text-align: right; text-shadow: 0 2px 6px #000; }
+.scoreboard > small { font-size: 9px; letter-spacing: 3px; color: #c0b396; }
+.scoreboard > strong { display: block; font: 700 45px "Barlow Condensed", Impact, sans-serif; letter-spacing: 2px; color: #efc565; }
+.scoreboard > span { font-size: 9px; letter-spacing: 1.5px; }
+.combo { position: absolute; bottom: 65px; width: 100%; text-align: center; font: italic 800 30px "Barlow Condensed", Impact, sans-serif; letter-spacing: 3px; color: #f7cc6a; text-shadow: 0 3px 10px #000; pointer-events: none; }
+.boss { position: absolute; top: 30px; left: 50%; transform: translateX(-50%); background: #481e18e6; border: 1px solid #bb5d3f; padding: 10px 20px; font: 700 15px "Barlow Condensed", Impact, sans-serif; letter-spacing: 2px; }
+.result { background: #10110fcf; backdrop-filter: blur(5px); justify-content: center; z-index: 3; }
+.result-card { text-align: center; }
+.result-card .eyebrow { justify-content: center; }
+.result-card h2 { font: italic 900 clamp(50px, 7vw, 92px)/1 "Barlow Condensed", Impact, sans-serif; margin: 20px 0; color: #edbc58; }
+.result-card p { color: #b5b09f; margin-bottom: 30px; }
+.result-card .primary { margin: auto; }
+.control-strip { display: flex; gap: 30px; align-items: center; padding: 25px 0; border-bottom: 1px solid #34342b; }
+.controls-title { border-right: 1px solid #3b3a2e; padding-right: 30px; flex-shrink: 0; }
+.controls-title > span { font-family: "Barlow Condensed", Impact, sans-serif; font-weight: 700; font-size: 16px; letter-spacing: 1px; display: block; }
+.controls-title small { font-size: 8px; letter-spacing: 1.5px; color: #73756a; }
+.control { display: flex; align-items: center; gap: 12px; }
+kbd { display: inline-flex; justify-content: center; align-items: center; width: 32px; height: 34px; background: #23241d; border: 1px solid #494b3b; border-bottom-width: 3px; font: 600 15px "Barlow Condensed", monospace; color: #d7cba9; }
+.quiet kbd { font-size: 9px; height: 21px; width: 30px; }
+.control > span { font-size: 11px; font-weight: 700; letter-spacing: 1.5px; white-space: nowrap; }
+.control small { display: block; color: #828374; font-weight: 400; font-size: 7px; letter-spacing: .7px; margin-top: 5px; }
+.key-cluster { display: flex; flex-direction: column; align-items: center; gap: 3px; }
+.key-cluster kbd { width: 21px; height: 21px; font-size: 10px; }
+.key-cluster > span { display: flex; gap: 3px; }
+footer { padding: 18px 0 24px; display: flex; justify-content: space-between; font-size: 8px; letter-spacing: 1.4px; color: #74766a; gap: 20px; line-height: 1.8; }
+footer b { color: #aa9b75; font-weight: 500; }
+.error { position: absolute; inset: auto 15px 15px; padding: 20px; background: #431c18; color: #ffdfcb; z-index: 5; }
+@media (min-width: 1450px) { .control-strip { justify-content: space-between; } }
+@media (max-width: 1000px) { .control-strip { gap: 20px; flex-wrap: wrap; } .controls-title { display: none; } .edition { font-size: 8px; letter-spacing: 1px; } .menu-side { display: none; } }
+@media (max-width: 600px) { .masthead { height: 65px; gap: 16px; } .edition { max-width: 150px; font-size: 7px; line-height: 1.8; } .quiet { font-size: 8px; gap: 5px; } .quiet kbd { display: none; } main { padding: 0 12px; } .game-shell { height: 70vh; min-height: 470px; } .menu { padding-left: 10px; } .hud { left: 12px; right: 12px; top: 12px; } .vitals { width: 155px; padding: 10px; } .scoreboard > strong { font-size: 30px; } .boss { top: 170px; width: 80%; text-align: center; } .control-strip { gap: 20px 28px; } .control { min-width: 130px; } footer { flex-direction: column; gap: 5px; } .result-card p { line-height: 1.8; } }
